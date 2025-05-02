@@ -1,12 +1,8 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import React from 'react'
 
-export default function Home() {
-  return (
-    <div>
-      Suresh
-      <br />
-      <Button>hello</Button>
-    </div>
-  );
+const Page = () => {
+    return (
+        <div>Page</div>
+    )
 }
+export default Page
