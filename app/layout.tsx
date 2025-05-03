@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Mona_Sans } from "next/font/google";
 import "./globals.css";
 //import { ThemeProvider } from "@/components/theme-provider";
@@ -20,8 +21,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body className={`${monaSans.className} antialiased pattern`}>{children}</body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning className="dark">
+        <body className={`${monaSans.className} antialiased pattern`}>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
