@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Mona_Sans } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+//import { ThemeProvider } from "@/components/theme-provider";
 
 const monaSans = Mona_Sans({
   variable: "--font-mona-sans",
@@ -10,7 +10,8 @@ const monaSans = Mona_Sans({
 
 export const metadata: Metadata = {
   title: "CareerEz",
-  description: "An AI-powered platform designed to help students and job seekers navigate their careers with clarity and confidence",
+  description:
+    "An AI-powered platform designed to help students and job seekers navigate their careers with clarity and confidence",
 };
 
 export default function RootLayout({
@@ -19,19 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${monaSans.className} antialiased`}
-      >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+    <html lang="en" suppressHydrationWarning className="dark">
+      <body className={`${monaSans.className} antialiased pattern`}>{children}</body>
     </html>
   );
 }
